@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* ----VARIABLES ----- */
+:root {
+  --background-color: #0d0d0d;
+  --color-back: #cacbca;
+  --color-text: #353631;
+  --color-back--shade: #9d9e9d;
+  --color-text--shade: #2a2b27;
+  --animate-delay: 2s;
+}
+/* ----CUSTOM ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----BODY----- */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+body:after {
+  content: '';
+  background-image: url(/marcus-aurelius.jpg);
+
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.3;
+
+  position: absolute;
+  z-index: -1;
+}
+
+.button-container {
+  position: absolute;
+  top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rem;
+  width: 100%;
+}
+
+.btn--quote {
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: bolder;
+  display: inline-block;
+  width: 5%;
+  height: 12vh;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: var(--color-back);
+  color: var(--color-text);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.btn--quote::before,
+.btn--quote::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: var(--background-color);
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.3;
+  right: 25px;
+  top: 2px;
+  z-index: 0;
+}
+.btn--quote::after {
+  color: var(--color-back--shade);
+  transform: rotateY(180deg);
+  top: 15px;
+  right: 10px;
+}
+
+.btn--quote:hover {
+  color: var(--color-text--shade);
+  background-color: var(--color-back--shade);
+  box-shadow: 0 3px 6px #fafafa59, 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in;
+}
+
+.btn--quote:hover::after {
+  color: #c2c3c1;
+}
+
+.container-quote {
+  position: absolute;
+  width: 70vw;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 40px;
+  padding: 50px;
+  background-color: transparent;
+  color: var(--color-back);
+  height: 50vh;
+  overflow: hidden;
+  box-shadow: 20px 20px rgba(202, 203, 202, 0.103);
+  transition: all 0.7s ease-in-out;
+  opacity: 1;
+}
+.container-quote:hover {
+  background-color: var(--color-back);
+  color: var(--color-text);
+  box-shadow: 0px 0px #cacbca;
+  opacity: 1;
+}
+
+.container-quote::before {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: var(--color-back--shade);
+  position: absolute;
+  font-size: 400px;
+  opacity: 0.3;
+  right: 0px;
+  top: -90px;
+  z-index: 0;
+}
+
+.container-words {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-size: 36px;
+  line-height: 70px;
+  letter-spacing: 1.2px;
+}
+.small {
+  font-size: 26px;
+  line-height: 60px;
+  letter-spacing: 0.8px;
+}
+.very--small {
+  font-size: 26px;
+  line-height: 44px;
+  letter-spacing: 0.5px;
+}
+
+.quote {
+  display: block;
+}
+.quote::first-letter {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.author {
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-style: oblique;
+}
