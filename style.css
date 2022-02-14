@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /* ----VARIABLES ----- */
 :root {
   --background-color: #0d0d0d;
@@ -17,19 +17,21 @@
 
 /* ----BODY----- */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--background-color);
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   position: relative;
   display: block;
 }
 
 body:after {
-  content: '';
+  content: "";
   background-image: url(/marcus-aurelius.jpg);
 
   background-size: cover;
+  background-position: center;
   top: 0;
   left: 0;
   bottom: 0;
@@ -39,7 +41,7 @@ body:after {
   position: absolute;
   z-index: -1;
 }
-
+/* ----BUTTONS---- */
 .button-container {
   position: absolute;
   top: 75px;
@@ -55,7 +57,7 @@ body:after {
   font-size: 32px;
   font-weight: bolder;
   display: inline-block;
-  width: 5%;
+  width: 10%;
   height: 12vh;
   border: 0;
   border-radius: 12px;
@@ -68,8 +70,8 @@ body:after {
 }
 .btn--quote::before,
 .btn--quote::after {
-  content: '\f075';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
   color: var(--background-color);
   position: absolute;
   font-size: 60px;
@@ -96,9 +98,12 @@ body:after {
   color: #c2c3c1;
 }
 
+/* QUOTES */
+
 .container-quote {
   position: absolute;
-  width: 70vw;
+  width: 75vw;
+  height: 50vh;
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
@@ -107,7 +112,7 @@ body:after {
   padding: 50px;
   background-color: transparent;
   color: var(--color-back);
-  height: 50vh;
+
   overflow: hidden;
   box-shadow: 20px 20px rgba(202, 203, 202, 0.103);
   transition: all 0.7s ease-in-out;
@@ -121,8 +126,8 @@ body:after {
 }
 
 .container-quote::before {
-  content: '\f075';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
   color: var(--color-back--shade);
   position: absolute;
   font-size: 400px;
@@ -162,9 +167,105 @@ body:after {
 .author {
   position: absolute;
   right: 1%;
-  bottom: 1%;
+  bottom: -5%;
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-style: oblique;
+}
+@media only screen and (max-width: 1600px) {
+  .container-words {
+    font-size: 32px;
+    letter-spacing: 1.15px;
+    line-height: 65px;
+  }
+
+  .very--small {
+    font-size: 23px;
+    line-height: 44px;
+    letter-spacing: 0.45px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container-quote {
+    width: 80vw;
+    height: 60vh;
+  }
+
+  .button-container {
+    align-items: flex-start;
+  }
+  .btn--quote {
+    width: 18%;
+  }
+
+  .container-words {
+    font-size: 28px;
+    letter-spacing: 1.1px;
+  }
+  .small {
+    font-size: 24px;
+    line-height: 55px;
+    letter-spacing: 0.72px;
+  }
+  .very--small {
+    font-size: 24px;
+    line-height: 42px;
+  }
+
+  .author {
+    bottom: -13%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .button-container {
+    top: 50px;
+    gap: 6rem;
+  }
+  .author {
+    bottom: -5%;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .container-quote {
+    width: 96vw;
+    height: 65vh;
+  }
+
+  .small {
+    font-size: 22px;
+    line-height: 52px;
+    letter-spacing: 0.7px;
+  }
+  .very--small {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .button-container {
+    top: 57px;
+    gap: 2rem;
+  }
+  .container-words {
+    font-size: 26px;
+    letter-spacing: 1.1px;
+    line-height: 44px;
+  }
+  .small {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.72px;
+  }
+  .very--small {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+  .author {
+    font-size: 18px;
+    right: -5%;
+  }
 }
